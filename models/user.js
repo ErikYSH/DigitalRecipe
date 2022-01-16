@@ -4,9 +4,9 @@ const mongoose = require('mongoose')
 //USER SCHEMA
 const userSchema = new mongoose.Schema (
     {
-        name: {type: String, required:true},
-        username: {type:String, required:true},
-        email: {type:String, required:true},
+        name: String,
+        username: String,
+        email: String,
         food_category: [{type: mongoose.Schema.Types.ObjectId, ref:"food_category"}],
         recipe: [{type: mongoose.Schema.Types.ObjectId, ref: "recipe"}],
     }, 

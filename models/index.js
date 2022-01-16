@@ -5,10 +5,10 @@
 const mongoose = require("mongoose");
  //SHORTCUT TO MONGOOSE.CONNECTION OBJECT, CREATED BY MONGOOSE.CONNECT
  const db =mongoose.connection;
- const dbUrl = process.env.DATABASE_URL;
+const dbUrl = process.env.DATABASE_URL;
 
 
- const User = require('./user');
+const User = require('./user');
 const Food_category = require('./food_category');
 const Recipe = require('./recipe');
 

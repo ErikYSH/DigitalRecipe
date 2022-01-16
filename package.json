@@ -4,12 +4,21 @@
   "description": "Digital Recipe",
   "main": "server.js",
   "scripts": {
-    "test": "Digital"
+    "test": "Digital",
+    "start": "node server.js"
   },
   "author": "Joe Walker and Erik Yang",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^12.0.3",
     "express": "^4.17.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ErikYSH/DigitalRecipe.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ErikYSH/DigitalRecipe/issues"
+  },
+  "homepage": "https://github.com/ErikYSH/DigitalRecipe#readme"
 }

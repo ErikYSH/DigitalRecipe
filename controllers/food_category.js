@@ -37,7 +37,7 @@ const db = require("../models");
 const idx = (req, res) => {
     db.Food_category.find({}, function (err, allFood_Category) {
         if (err) return res.send(err);
-        const context = { user: allFood_Category };
+        const context = { food_category: allFood_Category };
         return res.render("food_category/index", context);
     });
 };
@@ -49,7 +49,7 @@ const show = (req, res) => {
     db.Food_category.findById(req.params.id, function (err, foundFood_Category) {
         if (err) return res.send(err);
 
-        const context = { user: foundFood_Category };
+        const context = { food_category: foundFood_Category };
         return res.render("food_category/show", context);
     });
 };

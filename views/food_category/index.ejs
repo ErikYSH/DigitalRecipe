@@ -1,13 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bake me</title>
-</head>
-<body>
-    <h1>Food Category</h1>
-    
-</body>
-</html>
+<%- include('../partials/head.ejs') %>
+<table id="list">
+  <thead>
+    <tr>
+      <th>Recipe Name</th>
+      <th>Sub<br>Category</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% food_category.forEach(function(m) { %>
+      <tr>
+        <td><%= m.name %></td>
+        <td><a href="/food_category/<%= m._id %>">Recipe</a></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+  

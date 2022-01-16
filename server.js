@@ -1,4 +1,5 @@
 require("dotenv").config();
+
 /* ========== EXTERNAL MODULES ========== */
 const express = require("express");
 const methodOverride = require("method-override")
@@ -12,9 +13,6 @@ const app = express();
 /* ========== CONFIGURATION ========== */
 const PORT = 7000;
 
-app.set("view engine", "ejs");
-
-
 /* ========== MIDDLEWARE ========== */
 // body data middleware
 app.use(express.urlencoded({ extended: true }));
@@ -27,6 +25,8 @@ app.use((req, res, next) => {
 	console.log(req.url, req.method);
 	next();
 });
+
+// INTERNAL ROUTES
 // const indexRoutes = require('./routes/index');
 // const userRoutes = require('./routes/user');
 // const recipeRoutes = require('./routes/recipe');
@@ -42,14 +42,12 @@ app.get((req,res)=>{
     res.send("404! NOT FOUND")
 })
 
+// VIEW ENGINE SET UP // 
+app.set("view engine", "ejs");
+
 // app.use('/index', indexRoutes);
 // app.use('/user', userRoutes);
 // app.use('/recipe', recipeRoutes);
 // app.use('/food_category', food_categoryRoutes);
-
-
-app.listen(PORT, () =>{
-    console.log(`Digital Recipe going ON - PORT:${PORT}`)
-})
 
 

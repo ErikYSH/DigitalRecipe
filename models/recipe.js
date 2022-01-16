@@ -1,5 +1,7 @@
+//REQUIRING MONGOOSE
 const mongoose = require('mongoose');
 
+//RECIPE SCHEMA
 const recipeSchema = new mongoose.Schema(
     {
         name:{type: String, required:true},
@@ -16,5 +18,6 @@ const recipeSchema = new mongoose.Schema(
         timestamps: true,
     },
 )
-
+//MODEL EXPORT
 module.exports = mongoose.model("Recipe", recipeSchema);
+

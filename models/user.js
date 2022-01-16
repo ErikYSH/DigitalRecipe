@@ -1,5 +1,7 @@
+//REQUIRING MONGOOSE
 const mongoose = require('mongoose')
 
+//USER SCHEMA
 const userSchema = new mongoose.Schema (
     {
         name: {type: String, required:true},
@@ -12,5 +14,5 @@ const userSchema = new mongoose.Schema (
         timestamps: true,
     },
 )
-
+//MODEL EXPORT
 module.exports = mongoose.model("User", userSchema)

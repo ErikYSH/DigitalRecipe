@@ -9,7 +9,7 @@ const routes = require('./routes');
 /* ========== INSTANCE METHODS ========== */
 const app = express();
 
-/* ========== CONFIGUREATION ========== */
+/* ========== CONFIGURATION ========== */
 const PORT = 7000;
 
 app.set("view engine", "ejs");

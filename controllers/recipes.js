@@ -1,8 +1,8 @@
-const Recipes = require('../models/recipes');
+const Movie = require('../models/movie');
 
-//FUNCTION TO CREATE NEW RECIPES
+//FUNCTION TO CREATE A NEW RECIPE
 function create(req, res) {
-    Recipes.findById(req.params.id, function (err, movie) {
+    Movie.findById(req.params.id, function (err, movie) {
       movie.reviews.push(req.body);
       movie.save(function (err) {
         res.redirect(`/movies/${movie._id}`);

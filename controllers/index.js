@@ -1,4 +1,5 @@
-const Recipes = require('../models/index');
+const Movie = require('../models/movie');
+
 
 
 function index(req, res) {
@@ -36,6 +37,7 @@ function create(req, res) {
     res.redirect('/movies');
   });
 }
+
 
 module.exports = {
     index,

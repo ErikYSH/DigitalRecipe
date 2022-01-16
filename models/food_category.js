@@ -6,7 +6,7 @@ const foodCategorySchema = new mongoose.Schema (
     {
         name : {type: String, required:true},
         user: {type: mongoose.Schema.Types.ObjectId, ref:"user"},
-        recipe: [{types: mongoose.Schema.Types.ObjectId, ref:"recipe"}],
+        recipe: [{type: mongoose.Schema.Types.ObjectId, ref:"recipe"}],
     },
     {
         timestamps: true,

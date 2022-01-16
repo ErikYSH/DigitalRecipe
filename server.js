@@ -27,10 +27,10 @@ app.use((req, res, next) => {
 });
 
 // INTERNAL ROUTES
-// const indexRoutes = require('./routes/index');
-// const userRoutes = require('./routes/user');
-// const recipeRoutes = require('./routes/recipe');
-// const food_categoryRoutes = require('./routes/food_category');
+const indexRoutes = require('./routes/index');
+const userRoutes = require('./routes/user');
+const recipeRoutes = require('./routes/recipe');
+const food_categoryRoutes = require('./routes/food_category');
 
 
 /* ========== Router & Controllers ========== */
@@ -45,9 +45,12 @@ app.get((req,res)=>{
 // VIEW ENGINE SET UP // 
 app.set("view engine", "ejs");
 
-// app.use('/index', indexRoutes);
-// app.use('/user', userRoutes);
-// app.use('/recipe', recipeRoutes);
-// app.use('/food_category', food_categoryRoutes);
+app.use('/index', indexRoutes);
+app.use('/user', userRoutes);
+app.use('/recipe', recipeRoutes);
+app.use('/food_category', food_categoryRoutes);
 
 
+app.listen(PORT, () => {
+    console.log(`AWESOME DIGITAL RECIPE Book is Live on - PORTL:${PORT}`)
+})

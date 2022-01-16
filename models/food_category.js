@@ -1,4 +1,4 @@
-//REQUIRING MONGOOS
+//REQUIRING MONGOOSE
 const mongoose = require('mongoose');
 
 
@@ -13,5 +13,5 @@ const foodCategorySchema = new mongoose.Schema (
     },
 );
 
-
+//MODEL EXPORT
 module.exports = mongoose.model("Food_category", foodCategorySchema); 

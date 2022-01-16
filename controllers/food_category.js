@@ -19,6 +19,20 @@ const res = require("express/lib/response");
  * Delete - DELETE - /authors/:id  - Functional - Deletes author by id from request
  */
 
+
+// Inserting Samples 
+// const samples = db.Food_category.insertMany(
+//     {
+//         name: "Breakfast Test"
+//     },
+//     function (err, createSamples){
+//     if (err) return console.log(err)
+//     return console.log(`=== Sample Created ===== List: ${createSamples}`, createSamples);
+//     }
+// )
+
+
+
 //INDEX 
 
 const idx = (req, res) => {

@@ -27,6 +27,10 @@ app.use((req, res, next) => {
 	console.log(req.url, req.method);
 	next();
 });
+// const indexRoutes = require('./routes/index');
+// const userRoutes = require('./routes/user');
+// const recipeRoutes = require('./routes/recipe');
+// const food_categoryRoutes = require('./routes/food_category');
 
 
 /* ========== Router & Controllers ========== */
@@ -38,7 +42,14 @@ app.get((req,res)=>{
     res.send("404! NOT FOUND")
 })
 
+// app.use('/index', indexRoutes);
+// app.use('/user', userRoutes);
+// app.use('/recipe', recipeRoutes);
+// app.use('/food_category', food_categoryRoutes);
+
 
 app.listen(PORT, () =>{
     console.log(`Digital Recipe going ON - PORT:${PORT}`)
 })
+
+

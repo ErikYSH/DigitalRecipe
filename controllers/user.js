@@ -1,7 +1,8 @@
 const db = require("../models");
-const res = require("express/lib/response");
+
 
 // RESTUFL ROUTES CHECK LIST!
+
 /*
  * Index - GET - /authors  - Presentational - respond with all authors DONE
 

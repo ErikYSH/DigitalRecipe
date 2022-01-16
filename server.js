@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 	next();
 });
 
-//INTERNAL ROUTES
+// INTERNAL ROUTES
 // const indexRoutes = require('./routes/index');
 // const userRoutes = require('./routes/user');
 // const recipeRoutes = require('./routes/recipe');
@@ -49,10 +49,5 @@ app.set("view engine", "ejs");
 // app.use('/user', userRoutes);
 // app.use('/recipe', recipeRoutes);
 // app.use('/food_category', food_categoryRoutes);
-
-
-app.listen(PORT, () =>{
-    console.log(`Digital Recipe going ON - PORT:${PORT}`)
-})
 
 

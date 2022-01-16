@@ -1,6 +1,6 @@
 //REQUIRING OUR DB MODELS
 const db = require("../models");
-
+const res = require("express/lib/response");
 
 // RESTUFL ROUTES CHECK LIST!
 /*

@@ -1,0 +1,15 @@
+{
+  "name": "digital-recipe",
+  "version": "1.0.0",
+  "description": "Digital Recipe",
+  "main": "server.js",
+  "scripts": {
+    "test": "Digital"
+  },
+  "author": "Joe Walker and Erik Yang",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^12.0.3",
+    "express": "^4.17.2"
+  }
+}

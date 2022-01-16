@@ -1,7 +1,7 @@
 require("dotenv").config();
 /* ========== EXTERNAL MODULES ========== */
 const express = require("express");
-const methodOverride = require("method-override")
+// const methodOverride = require("method-override")
 
 /* ========== INTERNAL MODULES ========== */
 const routes = require('./routes');
@@ -19,7 +19,7 @@ app.set("view engine", "ejs");
 // body data middleware
 app.use(express.urlencoded({ extended: true }));
 // method override middleware
-app.use(methodOverride("_method"));
+// app.use(methodOverride("_method"));
 // serve public files
 app.use(express.static("public"));
 // logger

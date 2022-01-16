@@ -5,7 +5,7 @@ const Food_category = require('./food_category');
 const Recipe = require('./recipe');
 
 
-const db = mongoose.connection;
+const db = mongoose.connection;4
 const dbUrl = process.env.DATABASE_URL;
 
 const configs ={

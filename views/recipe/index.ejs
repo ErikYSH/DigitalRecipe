@@ -1,0 +1,19 @@
+<%- include('../partials/head.ejs') %>
+<table id="list">
+  <thead>
+    <tr>
+      <th>Recipe Name</th>
+      <th>Sub<br>Category</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% recipe.forEach(function(m) { %>
+      <tr>
+        <td><%= m.name %></td>
+        <td><a href="/recipe/<%= m._id %>">Recipe</a></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+  

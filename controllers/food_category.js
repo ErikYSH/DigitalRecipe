@@ -57,18 +57,29 @@ const show = (req, res) => {
 // NEW
 
 const newFood_category = (req, res) => {
-    res.render("food_category/new");
+    res.render("food_category/new", {name:"Add New Category"});
 };
 
 // CREATE
 
-const create = (req, res) => {
-    db.Food_category.create(req.body, function (err, createdFood_Category) {
-        if (err) return res.send(err);
+// const create = (req, res) => {
+//     db.Food_category.create(req.body, function (err, createdFood_Category) {
+//         if (err) return res.send(err);
 
-        return res.redirect("/food_category");
+//         return res.redirect("/food_category");
+//     });
+// };
+
+function create(req, res) {
+    const newFood_category = new db.Food_category(req.body);
+    newFood_category.save(function(err) {
+      // one way to handle errors
+      if (err) return res.redirect('/food_category/new');
+      console.log(newFood_category);
+      // for now, redirect right back to new.ejs
+      res.redirect('/food_category/new');
     });
-};
+  }
 
 // EDIT
 

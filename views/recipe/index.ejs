@@ -8,10 +8,10 @@
     </tr>
   </thead>
   <tbody>
-    <% food_category.forEach(function(m) { %>
+    <% recipe.forEach(function(m) { %>
       <tr>
         <td><%= m.name %></td>
-        <td><a href="/food_category/<%= m._id %>">Recipe</a></td>
+        <td><a href="/recipe/<%= m._id %>">Recipe</a></td>
       </tr>
       <% }); %>
     </tbody>

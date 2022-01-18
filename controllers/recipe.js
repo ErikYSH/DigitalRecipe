@@ -19,6 +19,35 @@ const db = require("../models");
  * Delete - DELETE - /authors/:id  - Functional - Deletes author by id from request
  */
 
+
+// Samples 
+// db.Recipe.insertMany(
+//     {
+//         name: "Quick-Pickled Cucumber - Melon Salad",
+//         cook_time: "30 mins",
+//         prep_time: "10 mins",
+//         portion: "6 cups", 
+//         ingredient: "4 Kirby cucumbers, peeled and sliced 1/2 inch thin, 3 cups sweet melon, cubed, 2 tablespoons plus two teaspoons granulated sugar, 1 tablespoon salt, black pepper, to taste, 2 slices high-quality prosciutto, cut into thin ribbons OR: 1/2 cup crumbled feta cheese",
+//         comment: "Refreshing, definitely will add more cucumber next time and some more cosher salt",
+//         },
+//         function (err, createSamples){
+//             if (err) return console.log(err)
+//             return console.log(`=== Sample Created ===== List: ${createSamples}`, createSamples);
+//             }  
+        
+// )
+
+const homepages = async(req, res) => {
+    try {
+      const limits = 5;
+      const categories = await db.Food_category.find({}).limit(limits);
+      const recipe = await db.Recipe.find({}).limit(limits);
+      res.render('recipe/index', { categories, recipe} );
+    } catch (error) {
+      res.send(error);
+    }
+  }
+
 //INDEX 
 
 const idx = (req, res) => {
@@ -29,6 +58,13 @@ const idx = (req, res) => {
     });
 };
 
+const categoryIdx = (req, res) => {
+    db.Food_category.find({}, function(err, allFood_Category){
+        if (err) return res.send(err);
+        const context = { food_category: allFood_Category };
+        return res.render("recipe/index", context);
+    })
+}
 // SHOW
 
 const show = (req, res) => {
@@ -97,6 +133,8 @@ const destroy = (req, res) => {
 };
 
 module.exports = {
+//   homepage,
+homepages,
     idx,
     show,
     create,
@@ -104,6 +142,7 @@ module.exports = {
     edit,
     update,
     destroy,
+    categoryIdx,
 };
 
 

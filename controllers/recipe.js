@@ -41,8 +41,8 @@ const homepages = async(req, res) => {
     try {
       const limits = 5;
       const categories = await db.Food_category.find({}).limit(limits);
-      const recipe = await db.Recipe.find({}).limit(limits);
-      res.render('recipe/index', { categories, recipe} );
+      const recipes = await db.Recipe.find({}).limit(limits);
+      res.render('recipe/index', { categories, recipes} );
     } catch (error) {
       res.send(error);
     }

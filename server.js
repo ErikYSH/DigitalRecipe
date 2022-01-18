@@ -54,7 +54,7 @@ app.get((req,res)=>{
 // app.use('/user', userRoutes);
 // app.use('/recipe', recipeRoutes);
 // app.use('/food_category', food_categoryRoutes);
-// app.use('/food_category', routes.food_category);
+
 app.use('/recipe', routes.recipe);
 
 app.listen(PORT, () => {

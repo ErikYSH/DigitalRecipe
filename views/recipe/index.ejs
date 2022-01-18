@@ -1,12 +1,54 @@
+
 <%- include('../partials/head.ejs') %>
 <table id="list">
   <thead>
-    <tr>
-      <th>Recipe Name</th>
-      <th>Sub<br>Category</th>
-      <th></th>
-    </tr>
+    <div>
+        <h3>CATEGORIES</h3>
+        <div class="dropdown">
+            <a href="#" class="d-flex align-items-center col-lg-4 mb-2 mb-lg-0 link-dark text-decoration-none dropdown-toggle" id="dropdownNavLink" data-bs-toggle="dropdown" aria-expanded="false">
+              <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+            </a>
+            <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownNavLink" >
+              <li><a class="dropdown-item active" href="#" aria-current="page">All</a></li>
+              <li><a class="dropdown-item" href="#">Breakfast</a></li>
+              <li><a class="dropdown-item" href="#">Lunch</a></li>
+              <li><a class="dropdown-item" href="#">Dinner</a></li>
+              <li><a class="dropdown-item" href="#">Dessert</a></li>
+              <li><a class="dropdown-item" href="#">Drinks</a></li>
+              <li><a class="dropdown-item" href="#">Appetizers</a></li>
+    
+            </ul>
+          </div>
+    </div> 
+
+    <div class="recipecards">
+        <div class="card-group">
+            <div class="card">
+              <img src="/images/chocolatecake.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Triple Chocolate Cake</h5>
+                <a href="#" class="btn btn-light">Recipe</a>
+              </div>
+            </div>
+            <div class="card">
+              <img src="/images/sodabread.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Soda Bread</h5>
+                <a href="#" class="btn btn-light">Recipe</a>
+              </div>
+            </div>
+            <div class="card">
+              <img src="/images/sourdoughpancakes.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Sourdough Pancakes</h5>
+                <a href="#" class="btn btn-light">Recipe</a>
+              </div>
+            </div>
+          </div>
+       
+    </div>
   </thead>
+
   <tbody>
     <% recipe.forEach(function(m) { %>
       <tr>
@@ -15,4 +57,4 @@
       </tr>
       <% }); %>
     </tbody>
-  </table>
+

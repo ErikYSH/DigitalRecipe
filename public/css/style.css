@@ -1,5 +1,13 @@
 body {
-    background-color: #EFEFED;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #324456;
+    background-color: #EFEFED !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    color: #324456 !important;
 };
+
+
+.form-control {
+    display:  block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 40% !important;
+}

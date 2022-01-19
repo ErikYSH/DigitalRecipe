@@ -1,11 +1,12 @@
 <%- include('../partials/head.ejs') %>
 <table id="list">
   <thead>
+<div class="container-sm" style="margin-bottom: 10px;">
     <div>
-        <h3>CATEGORIES</h3>
         <div class="dropdown">
-            <a href="#" class="d-flex align-items-center col-lg-4 mb-2 mb-lg-0 link-dark text-decoration-none dropdown-toggle" id="dropdownNavLink" data-bs-toggle="dropdown" aria-expanded="false">
-              <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+            <button  class="btn btn-secondary dropdown-toggle" style="background-color: #324456;margin-bottom: 10px; margin-top: 10px""button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+              CATEGORIES
+            </button>
             </a>
             <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownNavLink" >
            
@@ -16,9 +17,13 @@
               </li>
                 <% }) %>
             </ul>
-            
           </div>
     </div> 
+
+
+      <div class="d-grid gap-2">
+        <button class="btn btn-secondary" type="button" style="background-color: white; margin-bottom: 10px; margin-top: 10px; color: #324456; font-family: rubik;">ADD NEW RECIPE + </button>
+      </div>
 
     <div class="recipecards">
         <div class="card-group">
@@ -26,37 +31,16 @@
             <div class="card" style="margin-right: 10px"> 
               <img src="/images/chocolatecake.png" class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title"><%= recipe.name %> </h5>
-                <a href="#" class="btn btn-light">Recipe</a>
-                
+                <h5 class="card-title" style="font-family: rubik"><%= recipe.name %> </h5>
+                <a href="/recipe/<%= recipe._id %>" class="btn btn-secondary" style="background-color: white; margin-bottom: 10px; margin-top: 10px; color: #324456; font-family: rubik;">Recipe</a>
               </div>
-            
             </div>
             <%}) %> 
-            <div class="card" style="margin-right: 10px">
-              <img src="/images/sodabread.png" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Soda Bread</h5>
-                <a href="#" class="btn btn-light">Recipe</a>
-              </div>
-            </div>
-            <div class="card" style="margin-right: 10px">
-              <img src="/images/sourdoughpancakes.png" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Sourdough Pancakes</h5>
-                <a href="#" class="btn btn-light">Recipe</a>
+            
               </div>
             </div>
           </div>
-       
     </div>
-  </thead>
+</div>  
 
-  <tbody>
-    <% recipes.forEach(function(m) { %>
-      <tr>
-        <td><%= m.name %></td>
-        <td><a href="/recipe/<%= m._id %>">Recipe</a></td>
-      </tr>
-      <% }); %>
-    </tbody>
+

@@ -9,7 +9,8 @@ const recipeSchema = new mongoose.Schema(
     prep_time: { type: String },
     portion: { type: String },
     ingredient_img: { type: String },
-    ingredient: { type: String },
+    ingredient: [String],
+    direction: { type: String },
     comment: { type: String },
     food_category: {
       type: mongoose.Schema.Types.ObjectId,

@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 const foodCategorySchema = new mongoose.Schema (
     {
-        name : {type: String, required:true},
+        name : {type: String},
         user: {type: mongoose.Schema.Types.ObjectId, ref:"user"},
         recipe: [{type: mongoose.Schema.Types.ObjectId, ref:"recipe"}],
     },

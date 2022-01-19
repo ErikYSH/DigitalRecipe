@@ -1,25 +1,48 @@
 <%- include('../partials/head.ejs') %>
 
-
+<body>
+<div class="container-sm" style="margin-bottom: 10px;">
 <form id="new-form" action="/recipe" method="POST">
+  <div>
     <label>Recipe:</label>
     <input type="text" name="name">
+  </div>
+  <div>
     <label>Cooking Time:</label>
     <input type="text" name="cook_time">
+  </div> 
+  <div>
     <label>Prep Time:</label>
     <input type="text" name="prep_time">
+  </div>
+  <div>
     <label>Portion:</label>
     <input type="text" name="portion">
+  </div>
+  <div>
     <label type="text">upload image</label>
     <button>upload</button>
     <!-- uploads tag -->
+  </div> 
+  <div>
     <label>Ingredients:</label>
     <input type="text" name="ingredient">
+  </div>
+  <div>
     <label>Comments:</label>
     <input type="text" name="comment">
-   
-
-
-
+  </div>
+  <div>
     <input type="submit" value="Add New Recipe">
+  </div> 
   </form>
+</div>
+</body>
+
+<h5 style="margin-bottom: 10px; margin-top: 10px; font-family: rubik">INGREDIENTS</h5> 
+<li style="background-color: #EFEFED;" class="list-group-item">2C flour</li>
+<li style="background-color: #EFEFED;" class="list-group-item">2C sugar</li>
+<li style="background-color: #EFEFED;" class="list-group-item">4 Eggs + 1 Egg White</li>
+<li style="background-color: #EFEFED;" class="list-group-item">2TBSP Vanilla</li>
+<li style="background-color: #EFEFED;" class="list-group-item">3/4C Butter, melted & cooled</li>
+</ul>

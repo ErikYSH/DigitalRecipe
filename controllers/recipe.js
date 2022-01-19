@@ -39,7 +39,7 @@ const db = require("../models");
 
 const homepages = async(req, res) => {
     try {
-      const limits = 5;
+      const limits = 10;
       const categories = await db.Food_category.find({}).limit(limits);
       const recipes = await db.Recipe.find({}).limit(limits);
       res.render('recipe/index', { categories, recipes} );
@@ -87,6 +87,9 @@ const newRecipe = (req, res) => {
 
 const createRecipe = async (req, res) =>{
     try {
+        // req.body.ingredient = req.body.ingredient.replace(/\s*,\s*/g, ',');
+        if(req.body.ingredient) req.body.ingredient = req.body.ingredient.split(',');
+        if(req.body.direction) req.body.direction = req.body.direction.split(',');
         await db.Recipe.create(req.body)
         res.redirect('/recipe')
     } catch (error) {

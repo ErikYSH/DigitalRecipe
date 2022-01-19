@@ -2,7 +2,7 @@
 
 <body>
 <div class="container-sm" style="margin-bottom: 10px;">
-<form id="new-form" action="/recipe" method="POST">
+<form id="new-form" action="/recipe" method="POST" enctype="multipart/form-data">
 
    <div class="input-group flex-nowrap">
     <span class="input-group-text" id="addon-wrapping" style="background-color: #EFEFED;">Recipe Name</span>
@@ -28,14 +28,19 @@
 
   <div class="input-group mb-3" style="background-color: #EFEFED;">
     <label class="input-group-text" for="inputGroupFile01" style="background-color: #EFEFED;">Upload</label>
-    <input type="file" class="form-control" id="inputGroupFile01">
-    <!-- uploads tag -->
+    <input type="file" name="ingredient_img" class="form-control" id="inputGroupFile01">
+    
   </div>
 
  
   <div class="input-group flex-nowrap">
     <span class="input-group-text" id="addon-wrapping" style="background-color: #EFEFED;">Ingredients</span>
     <input type="text" class="form-control" aria-label="Ingredients" aria-describedby="addon-wrapping">
+  
+  </div>
+  <div class="input-group flex-nowrap">
+    <span class="input-group-text" id="addon-wrapping" style="background-color: #EFEFED;">Directions</span>
+    <input type="text" class="form-control" aria-label="direction" aria-describedby="addon-wrapping">
   </div>
   
   <div class="input-group flex-nowrap">

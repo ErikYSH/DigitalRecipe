@@ -1,5 +1,6 @@
 //REQUIRING OUR DB MODELS
 const db = require("../models");
+const cloudinary = require('cloudinary').v2;
 
 
 // RESTUFL ROUTES CHECK LIST!
@@ -87,21 +88,19 @@ const newRecipe = (req, res) => {
 
 const createRecipe = async (req, res) =>{
     try {
-        // req.body.ingredient = req.body.ingredient.replace(/\s*,\s*/g, ',');
         if(req.body.ingredient) req.body.ingredient = req.body.ingredient.split(',');
         if(req.body.direction) req.body.direction = req.body.direction.split(',');
+        const photo = req.files.ingredient_img;
+        photo.mv(`./uploads/${photo.name}`);
+        cloudinary.uploader.upload(`./uploads/${photo.name}`).then(result => {
+            req.body.ingredient_img = result.secure_url;
+        }).catch(error => console.log(error))
+        // req.body.ingredient = req.body.ingredient.replace(/\s*,\s*/g, ',');
         await db.Recipe.create(req.body)
         res.redirect('/recipe')
     } catch (error) {
         console.log(error)
     }
-    
-    // const newRecipe = new db.Recipe(req.body);
-    // db.Recipe.create(req.body,function (err) {
-    //     if(err) return res.redirect("/recipe/newRecipe")
-    //     console.log(newRecipe);
-    //     res.redirect("/recipe")
-    // });
 }
 // EDIT
 

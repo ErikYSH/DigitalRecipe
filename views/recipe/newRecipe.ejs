@@ -3,50 +3,49 @@
 <body>
 <div class="container-sm" style="margin-bottom: 10px;">
 <form id="new-form" action="/recipe" method="POST">
-  <div>
-    <label>Recipe:</label>
-    <input type="text" name="name">
+
+   <div class="input-group flex-nowrap">
+    <span class="input-group-text" id="addon-wrapping" style="background-color: #EFEFED;">Recipe Name</span>
+    <input type="text" class="form-control" aria-label="Recipe Name aria-describedby="addon-wrapping">
   </div>
-  <div>
-    <label>Cooking Time:</label>
-    <input type="text" name="cook_time">
-  </div> 
-  <div>
-    <label>Prep Time:</label>
-    <input type="text" name="prep_time">
+
+
+  <div class="input-group flex-nowrap">
+    <span class="input-group-text" id="addon-wrapping" style="background-color: #EFEFED;">Cooking Time</span>
+    <input type="text" class="form-control" aria-label="Cooking Time" aria-describedby="addon-wrapping">
   </div>
-  <div>
-    <label>Portion:</label>
-    <input type="text" name="portion">
+
+  <div class="input-group flex-nowrap">
+    <span class="input-group-text" id="addon-wrapping" style="background-color: #EFEFED;">Prep Time</span>
+    <input type="text" class="form-control" aria-label="Prep Time" aria-describedby="addon-wrapping">
   </div>
-  <div>
-    <label type="text">upload image</label>
-    <button>upload</button>
+
+  <div class="input-group flex-nowrap">
+    <span class="input-group-text" id="addon-wrapping" style="background-color: #EFEFED;">Portion</span>
+    <input type="text" class="form-control" aria-label="Portion" aria-describedby="addon-wrapping">
+  </div>
+  
+
+  <div class="input-group mb-3" style="background-color: #EFEFED;">
+    <label class="input-group-text" for="inputGroupFile01" style="background-color: #EFEFED;">Upload</label>
+    <input type="file" class="form-control" id="inputGroupFile01">
     <!-- uploads tag -->
-  </div> 
-  <div>
-    <label>Ingredients:</label>
-    <input type="text" name="ingredient">
   </div>
-  <div>
-    <label>Directions:</label>
-    <input type="text" name="direction">
+
+ 
+  <div class="input-group flex-nowrap">
+    <span class="input-group-text" id="addon-wrapping" style="background-color: #EFEFED;">Ingredients</span>
+    <input type="text" class="form-control" aria-label="Ingredients" aria-describedby="addon-wrapping">
   </div>
-  <div>
-    <label>Comments:</label>
-    <input type="text" name="comment">
+  
+  <div class="input-group flex-nowrap">
+    <span class="input-group-text" id="addon-wrapping" style="background-color: #EFEFED;">Comments</span>
+    <input type="text" class="form-control" aria-label="Comments" aria-describedby="addon-wrapping">
+
   </div>
-  <div>
     <input type="submit" value="Add New Recipe">
   </div> 
   </form>
 </div>
 </body>
 
-<h5 style="margin-bottom: 10px; margin-top: 10px; font-family: rubik">INGREDIENTS</h5> 
-<li style="background-color: #EFEFED;" class="list-group-item">2C flour</li>
-<li style="background-color: #EFEFED;" class="list-group-item">2C sugar</li>
-<li style="background-color: #EFEFED;" class="list-group-item">4 Eggs + 1 Egg White</li>
-<li style="background-color: #EFEFED;" class="list-group-item">2TBSP Vanilla</li>
-<li style="background-color: #EFEFED;" class="list-group-item">3/4C Butter, melted & cooled</li>
-</ul>

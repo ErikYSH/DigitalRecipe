@@ -10,7 +10,7 @@ const recipeSchema = new mongoose.Schema(
     portion: { type: String },
     ingredient_img: { type: String },
     ingredient: [String],
-    direction: { type: String },
+    direction: [String],
     comment: { type: String },
     food_category: {
       type: mongoose.Schema.Types.ObjectId,

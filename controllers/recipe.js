@@ -62,7 +62,7 @@ const categoryIdx = (req, res) => {
     db.Food_category.find({}, function(err, allFood_Category){
         if (err) return res.send(err);
         const context = { food_category: allFood_Category };
-        return res.render("recipe/index", context);
+        return res.render("recipe/newRecipe", context);
     })
 }
 // SHOW
@@ -80,19 +80,26 @@ const show = (req, res) => {
 // NEW
 
 const newRecipe = (req, res) => {
-    res.render("recipe/new");
+    res.render("recipe/newRecipe");
 };
 
 // CREATE
 
-const create = (req, res) => {
-    db.Recipe.create(req.body, function (err, createdRecipe) {
-        if (err) return res.send(err);
-
-        return res.redirect("/recipe");
-    });
-};
-
+const createRecipe = async (req, res) =>{
+    try {
+        await db.Recipe.create(req.body)
+        res.redirect('/recipe')
+    } catch (error) {
+        console.log(error)
+    }
+    
+    // const newRecipe = new db.Recipe(req.body);
+    // db.Recipe.create(req.body,function (err) {
+    //     if(err) return res.redirect("/recipe/newRecipe")
+    //     console.log(newRecipe);
+    //     res.redirect("/recipe")
+    // });
+}
 // EDIT
 
 const edit = (req, res) => {
@@ -133,16 +140,14 @@ const destroy = (req, res) => {
 };
 
 module.exports = {
-//   homepage,
-homepages,
+    homepages,
     idx,
     show,
-    create,
+    createRecipe,
     newRecipe,
     edit,
     update,
     destroy,
     categoryIdx,
 };
-
 

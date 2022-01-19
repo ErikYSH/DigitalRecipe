@@ -1,11 +1,9 @@
-
 <%- include('../partials/head.ejs') %>
 <table id="list">
   <thead>
     <div>
         <h3>CATEGORIES</h3>
         <div class="dropdown">
-          
             <a href="#" class="d-flex align-items-center col-lg-4 mb-2 mb-lg-0 link-dark text-decoration-none dropdown-toggle" id="dropdownNavLink" data-bs-toggle="dropdown" aria-expanded="false">
               <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
             </a>
@@ -25,7 +23,7 @@
     <div class="recipecards">
         <div class="card-group">
           <% recipes.forEach(recipe => {%> 
-            <div class="card"> 
+            <div class="card" style="margin-right: 10px"> 
               <img src="/images/chocolatecake.png" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title"><%= recipe.name %> </h5>
@@ -35,14 +33,14 @@
             
             </div>
             <%}) %> 
-            <div class="card">
+            <div class="card" style="margin-right: 10px">
               <img src="/images/sodabread.png" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">Soda Bread</h5>
                 <a href="#" class="btn btn-light">Recipe</a>
               </div>
             </div>
-            <div class="card">
+            <div class="card" style="margin-right: 10px">
               <img src="/images/sourdoughpancakes.png" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">Sourdough Pancakes</h5>
@@ -62,4 +60,3 @@
       </tr>
       <% }); %>
     </tbody>
-

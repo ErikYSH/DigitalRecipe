@@ -97,7 +97,7 @@ const createRecipe = async (req, res) =>{
         res.redirect('/recipe');
         } catch(error) {
             console.log(error)
-            res.redirect('/')
+            res.redirect('/recipe')
         }
     }
 

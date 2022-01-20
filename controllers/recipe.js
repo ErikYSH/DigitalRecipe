@@ -88,14 +88,14 @@ const newRecipe = (req, res) => {
 
 const createRecipe = async (req, res) =>{
     try {
-        if(req.body.ingredient) req.body.ingredient = req.body.ingredient.split(',');
-        if(req.body.direction) req.body.direction = req.body.direction.split(',');
         const photo = req.files.ingredient_img;
         photo.mv(`./uploads/${photo.name}`);
         cloudinary.uploader.upload(`./uploads/${photo.name}`).then(result => {
             req.body.ingredient_img = result.secure_url;
         }).catch(error => console.log(error))
         // req.body.ingredient = req.body.ingredient.replace(/\s*,\s*/g, ',');
+        if(req.body.ingredient) req.body.ingredient = req.body.ingredient.split(',');
+        if(req.body.direction) req.body.direction = req.body.direction.split(',');
         await db.Recipe.create(req.body)
         res.redirect('/recipe')
     } catch (error) {
@@ -104,18 +104,17 @@ const createRecipe = async (req, res) =>{
 }
 // EDIT
 
-const edit = (req, res) => {
+const editRecipe = (req, res) => {
     db.Recipe.findById(req.params.id, (err, foundRecipe) => {
         if (err) return res.send(err);
-
         const context = { recipe: foundRecipe };
-        return res.render("recipe/edit", context);
+        return res.render("recipe/editRecipe", context);
     });
 };
 
 // UPDATE
 
-const update = (req, res) => {
+const updateRecipe = (req, res) => {
     db.Recipe.findByIdAndUpdate(
         req.params.id,
         {
@@ -133,11 +132,10 @@ const update = (req, res) => {
 
 // DELETE
 
-const destroy = (req, res) => {
-    db.recipe.findByIdAndDelete(req.params.id, (err, deletedRecipe) => {
+const destroyRecipe = (req, res) => {
+    db.Recipe.findByIdAndDelete(req.params.id, (err, deletedRecipe) => {
         if (err) return res.send(err);
-
-        return res.redirect("/recipe");
+        return res.redirect('/recipe')
     });
 };
 
@@ -147,9 +145,9 @@ module.exports = {
     show,
     createRecipe,
     newRecipe,
-    edit,
-    update,
-    destroy,
+    editRecipe,
+    updateRecipe,
+    destroyRecipe,
     categoryIdx,
 };
 

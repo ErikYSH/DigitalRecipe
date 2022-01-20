@@ -1,0 +1,56 @@
+<%- include('../partials/head.ejs') %>
+<body>
+<div class="container-sm" style="margin-bottom: 10px;">
+    <form id="new-form" action="/recipe/<%= recipe._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+    
+       <div class="input-group flex-nowrap">
+        <span class="input-group-text" id="addon-wrapping" style="background-color: #EFEFED;">Recipe Name</span>
+        <input type="text" placeholder="recipe name" value="<%= recipe.name %>" name="name" class="form-control" aria-label="Recipe Name aria-describedby="addon-wrapping">
+      </div>
+    
+    
+      <div class="input-group flex-nowrap">
+        <span class="input-group-text" id="addon-wrapping" style="background-color: #EFEFED;">Cooking Time</span>
+        <input type="text" placeholder="cooking time" value="<%= recipe.cook_time %>" name="cook_time" class="form-control" aria-label="Cooking Time" aria-describedby="addon-wrapping">
+      </div>
+    
+      <div class="input-group flex-nowrap">
+        <span class="input-group-text" id="addon-wrapping" style="background-color: #EFEFED;">Prep Time</span>
+        <input type="text" placeholder="prep time" value="<%= recipe.prep_time %>" name="prep_time" class="form-control" aria-label="Prep Time" aria-describedby="addon-wrapping">
+      </div>
+    
+      <div class="input-group flex-nowrap">
+        <span class="input-group-text" id="addon-wrapping" style="background-color: #EFEFED;">Portion</span>
+        <input type="text" placeholder="portion" value="<%= recipe.portion %>" name="portion" class="form-control" aria-label="Portion" aria-describedby="addon-wrapping">
+      </div>
+      
+      <% if (recipe.ingredient_img) { %>
+      <div class="input-group mb-3" style="background-color: #EFEFED;">
+        <label class="input-group-text" for="inputGroupFile01" style="background-color: #EFEFED;">Upload</label>
+        <input type="file" value="<%= recipe.ingredient_img %>" name="ingredient_img" class="form-control" id="inputGroupFile01">
+        
+      </div>
+      <% } %> 
+     
+      <div class="input-group flex-nowrap">
+        <span class="input-group-text" id="addon-wrapping" style="background-color: #EFEFED;">Ingredients</span>
+        <input type="text" placeholder="ingredients" value="<%= recipe.ingredient %>" name="ingredient" class="form-control" aria-label="Ingredients" aria-describedby="addon-wrapping">
+      
+      </div>
+      <div class="input-group flex-nowrap">
+        <span class="input-group-text" id="addon-wrapping" style="background-color: #EFEFED;">Directions</span>
+        <input type="text" placeholder="directions" value="<%= recipe.direction %>" name="direction" class="form-control" aria-label="direction" aria-describedby="addon-wrapping">
+      </div>
+      
+      <div class="input-group flex-nowrap">
+        <span class="input-group-text" id="addon-wrapping" style="background-color: #EFEFED;">Comments</span>
+        <input type="text" placeholder="comments" value="<%= recipe.comment %>" name="comment" class="form-control" aria-label="Comments" aria-describedby="addon-wrapping">
+    
+      </div>
+        <input type="submit" value="Update Recipe">
+      </div> 
+      </form>
+    </div>
+
+        
+    </body>

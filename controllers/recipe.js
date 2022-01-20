@@ -92,16 +92,16 @@ const createRecipe = async (req, res) =>{
         if(req.body.direction) req.body.direction = req.body.direction.split(',');
         const photo = req.files.ingredient_img;
         photo.mv(`./uploads/${photo.name}`);
-        cloudinary.uploader.upload(`./uploads/${photo.name}`).then(result => {
+        const result = await cloudinary.uploader.upload(`./uploads/${photo.name}`)
             req.body.ingredient_img = result.secure_url;
-        }).catch(error => console.log(error))
-        // req.body.ingredient = req.body.ingredient.replace(/\s*,\s*/g, ',');
-        await db.Recipe.create(req.body)
-        res.redirect('/recipe')
-    } catch (error) {
-        console.log(error)
+            await db.Recipe.create(req.body)
+            res.redirect('/recipe')
+        } catch(error) {
+            console.log(error)
+            res.redirect('/')
+        }
     }
-}
+
 // EDIT
 
 const edit = (req, res) => {

@@ -14,7 +14,6 @@ const app = express();
 
 /* ========== CONFIGURATION ========== */
 const PORT = 7000;
-app.set("view engine", "ejs");
 cloudinary.config({
     cloud_name: process.env.CLOUD_NAME,
     api_key: process.env.API_KEY,
@@ -28,18 +27,17 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 // serve public files
 app.use(express.static("public"));
+app.use(express.static("uploads"))
 // logger
 app.use((req, res, next) => {
-	console.log(req.url, req.method);
+    console.log(req.url, req.method);
 	next();
 });
 app.use(expressFileUpload({ createParentPath: true }));
 
-// INTERNAL ROUTES
-// const indexRoutes = require('./routes/index');
-// const userRoutes = require('./routes/user');
-// const recipeRoutes = require('./routes/recipe');
-// const food_categoryRoutes = require('./routes/food_category');
+// VIEW ENGINE SET UP // 
+app.set("view engine", "ejs");
+
 
 
 /* ========== Router & Controllers ========== */
@@ -55,13 +53,9 @@ app.get((req,res)=>{
     res.send("404! NOT FOUND")
 })
  
-// VIEW ENGINE SET UP // 
 
 
-// app.use('/index', indexRoutes);
-// app.use('/user', userRoutes);
-// app.use('/recipe', recipeRoutes);
-// app.use('/food_category', food_categoryRoutes);
+
 
 app.use('/recipe', routes.recipe);
 

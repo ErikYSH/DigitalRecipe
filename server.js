@@ -2,7 +2,9 @@ require("dotenv").config();
 
 /* ========== EXTERNAL MODULES ========== */
 const express = require("express");
-const methodOverride = require("method-override")
+const methodOverride = require("method-override");
+const expressFileUpload = require('express-fileupload');
+const cloudinary = require('cloudinary').v2;
 
 /* ========== INTERNAL MODULES ========== */
 const routes = require('./routes');
@@ -13,6 +15,11 @@ const app = express();
 /* ========== CONFIGURATION ========== */
 const PORT = 7000;
 app.set("view engine", "ejs");
+cloudinary.config({
+    cloud_name: process.env.CLOUD_NAME,
+    api_key: process.env.API_KEY,
+    api_secret: process.env.API_SECRET,
+});
 
 /* ========== MIDDLEWARE ========== */
 // body data middleware
@@ -26,6 +33,7 @@ app.use((req, res, next) => {
 	console.log(req.url, req.method);
 	next();
 });
+app.use(expressFileUpload({ createParentPath: true }));
 
 // INTERNAL ROUTES
 // const indexRoutes = require('./routes/index');
@@ -46,7 +54,7 @@ app.get("/", (req, res) => {
 app.get((req,res)=>{
     res.send("404! NOT FOUND")
 })
-
+ 
 // VIEW ENGINE SET UP // 
 
 

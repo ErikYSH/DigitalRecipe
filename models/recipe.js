@@ -8,7 +8,7 @@ const recipeSchema = new mongoose.Schema(
     cook_time: { type: String },
     prep_time: { type: String },
     portion: { type: String },
-    ingredient_img: {String},
+    ingredient_img: String,
     ingredient: [String],
     direction: [String],
     comment: { type: String },

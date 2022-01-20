@@ -11,8 +11,9 @@
     </ul>
     <ul>
     <h5 style="margin-bottom: 10px; margin-top: 10px; font-family: rubik">INGREDIENTS</h5> 
-    <% for (let i=0; i < recipe.ingredient.length; i++){ %> 
-    <li style="background-color: #EFEFED;" class="list-group-item"><%= recipe.ingredient[i] %> </li>
+    <% let ingredients = recipe.ingredient.split(",") %>
+    <% for (let i=0; i < ingredients.length; i++){ %> 
+    <li style="background-color: #EFEFED;" class="list-group-item"><%= recipe.ingredients[i] %> </li>
     <% } %> 
   </ul>
   <ul>

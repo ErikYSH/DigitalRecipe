@@ -101,21 +101,21 @@ const createRecipe = async (req, res) =>{
             res.redirect('/')
         }
     }
+    }
 
 // EDIT
 
-const edit = (req, res) => {
+const editRecipe = (req, res) => {
     db.Recipe.findById(req.params.id, (err, foundRecipe) => {
         if (err) return res.send(err);
-
         const context = { recipe: foundRecipe };
-        return res.render("recipe/edit", context);
+        return res.render("recipe/editRecipe", context);
     });
 };
 
 // UPDATE
 
-const update = (req, res) => {
+const updateRecipe = (req, res) => {
     db.Recipe.findByIdAndUpdate(
         req.params.id,
         {
@@ -133,11 +133,10 @@ const update = (req, res) => {
 
 // DELETE
 
-const destroy = (req, res) => {
-    db.recipe.findByIdAndDelete(req.params.id, (err, deletedRecipe) => {
+const destroyRecipe = (req, res) => {
+    db.Recipe.findByIdAndDelete(req.params.id, (err, deletedRecipe) => {
         if (err) return res.send(err);
-
-        return res.redirect("/recipe");
+        return res.redirect('/recipe')
     });
 };
 
@@ -147,9 +146,9 @@ module.exports = {
     show,
     createRecipe,
     newRecipe,
-    edit,
-    update,
-    destroy,
+    editRecipe,
+    updateRecipe,
+    destroyRecipe,
     categoryIdx,
 };
 

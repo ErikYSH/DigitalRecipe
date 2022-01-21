@@ -1,48 +1,50 @@
 
 <%- include('../partials/head.ejs') %>
 <body>
-<div class="container-sm" style="margin-bottom: 10px;">
-<ul class="list-group list-group-flush">
+<div class="container" style="margin-bottom: 10px; max-width: 700px;">
+<ul class="list-group list-group-flush" style="margin-left: 50px;">
     <ul class="list-group list-group-horizontal">
         <li class="list-group-item">Prep Time</li>
         <li class="list-group-item"><%= recipe.prep_time %> </li>
         <li class="list-group-item">Cook Time</li>
         <li class="list-group-item"><%= recipe.cook_time %></li>
+        <li class="list-group-item">Portion</li>
+        <li class="list-group-item"><%= recipe.portion %></li>
+        
     </ul>
+
     <% if (recipe.ingredient_img) { %> 
-     <img src="<%= recipe.ingredient_img %> " alt="<%= recipe.name %> ">
+     <img src="<%= recipe.ingredient_img %> " style="max-height: 660px; max-width: 500px; display: block; margin-left: auto; margin-right: auto; margin-top: 50px; margin-bottom: 50px" alt="<%= recipe.name %> ">
     <% } %>
     <ul>
       <h5 style="margin-bottom: 10px; margin-top: 10px; font-family: rubik">INGREDIENTS</h5> 
       <% for (let i=0; i < recipe.ingredient.length; i++){ %> 
-      <li style="background-color: #EFEFED;" class="list-group-item"><%= recipe.ingredient[i] %> </li>
+      <li style="background-color: #EFEFED; margin-right: 20px;" class="list-group-item"><%= recipe.ingredient[i] %> </li>
       <% } %>
-
    
   </ul>
 
   <ul>
   <h5 style="margin-bottom: 10px; margin-top: 10px; font-family: rubik">DIRECTIONS</h5> 
   <% for (let i=0; i < recipe.direction.length; i++){ %> 
-    <li style="background-color: #EFEFED;" class="list-group-item"><%= recipe.direction[i] %></li>
+    <li style="background-color: #EFEFED; margin-right: 20px;" class="list-group-item"><%= recipe.direction[i] %></li>
     <% } %> 
 </ul>
 </ul>
 
   <a href="/recipe/<%= recipe._id %>/editRecipe">
-<button type="button" class="btn btn-primary btn-sm" style="background-color: white; color: black; margin-bottom: 10px; margin-top: 10px; font-family: rubik"
->EDIT</button></a>
-<button type="button" class="btn btn-secondary btn-sm" style="background-color :white; color: black; margin-bottom: 10px; margin-top: 10px; font-family: rubik"
->DELETE</button>
+<button type="button" class="btn btn-primary btn-sm" style="background-color: white; color: black; margin-bottom: 10px; margin-top: 10px; font-family: rubik; margin-left: 70px">EDIT</button></a>
 
 <form  action="/recipe/<%= recipe._id %>?_method=DELETE" method="POST">
-  <input type="submit" value="DELETE">
+  <input style="font-family: rubik; background-color: white; font-family: rubik; border-radius: 99; margin-left: 70px;" type="submit" value="DELETE">
 </form>
 
+<div>
+  <p style="margin-left: 70px; margin-top: 10px;"><%= recipe.comment %></p>
+</div>
 
-<p><%= recipe.comment %></p>
 
-<div Style="margin-bottom: 10px; margin-top: 10px" class="form-floating">
+<div Style="margin-bottom: 10px; margin-top: 10px; max-width: 700px; margin-left: 50px;" class="form-floating">
     <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
     <label for="floatingTextarea2" style="font-family: rubik;">COMMENTS</label>
   </div>

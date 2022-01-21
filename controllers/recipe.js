@@ -91,8 +91,18 @@ const createRecipe = async (req, res) =>{
         const photo = req.files.ingredient_img;
         photo.mv(`../uploads/${photo.name}`);
         const result = await cloudinary.uploader.upload(`../uploads/${photo.name}`)
-        console.log(result)
+        // console.log(result)
         req.body.ingredient_img = result.secure_url;
+        // db.Food_category.findById(req.body.food_category)
+        // .exec(function (err, foundCategory){
+        //     if (err) return res.send(err);
+        //     foundCategory.food_category.push(req.body)
+        //     foundCategory.save();
+        // })
+        // db.Food_category.findById(req.body.food_category.name)
+        // .exec(function (err, foundCategory){
+        //     console.log(foundCategory)
+        // })
         await db.Recipe.create(req.body);
         res.redirect('/recipe');
         } catch(error) {

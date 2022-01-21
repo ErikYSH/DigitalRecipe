@@ -13,12 +13,12 @@
      <img src="<%= recipe.ingredient_img %> " alt="<%= recipe.name %> ">
     <% } %>
     <ul>
-    <h5 style="margin-bottom: 10px; margin-top: 10px; font-family: rubik">INGREDIENTS</h5> 
-    <% let ingredients = recipe.ingredient.split(",") %>
-    <% for (let i=0; i < ingredients.length; i++){ %> 
-    <li style="background-color: #EFEFED;" class="list-group-item"><%= recipe.ingredients[i] %> </li>
-    <% } %> 
+      <h5 style="margin-bottom: 10px; margin-top: 10px; font-family: rubik">INGREDIENTS</h5> 
+      <% for (let i=0; i < recipe.ingredient.length; i++){ %> 
+      <li style="background-color: #EFEFED;" class="list-group-item"><%= recipe.ingredient[i] %> </li>
+      <% } %>
   </ul>
+
   <ul>
   <h5 style="margin-bottom: 10px; margin-top: 10px; font-family: rubik">DIRECTIONS</h5> 
   <% for (let i=0; i < recipe.direction.length; i++){ %> 
@@ -33,7 +33,7 @@
 <button type="button" class="btn btn-secondary btn-sm" style="background-color :white; color: black; margin-bottom: 10px; margin-top: 10px; font-family: rubik"
 >DELETE</button>
 
-<form action="/recipe/<%= recipe._id %>?_method=DELETE" method="POST">
+<form  action="/recipe/<%= recipe._id %>?_method=DELETE" method="POST">
   <input type="submit" value="DELETE">
 </form>
 

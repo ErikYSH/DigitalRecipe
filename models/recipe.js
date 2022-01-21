@@ -14,7 +14,7 @@ const recipeSchema = new mongoose.Schema(
     comment: { type: String },
     food_category: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "food_category",
+      ref: 'Food_category',
     },
     user: { type: mongoose.Schema.Types.ObjectId, ref: "user" },
   },

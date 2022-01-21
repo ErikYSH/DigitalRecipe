@@ -4,11 +4,7 @@ body {
     color: #324456 !important;
 };
 
-
-.form-control {
-    display:  block !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    width: 40% !important;
+.cardImage {
+max-width: 286px;
+max-height: 161px;
 }
-

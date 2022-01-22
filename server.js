@@ -46,7 +46,7 @@ app.set("view engine", "ejs");
 // })
 
 app.get("/", (req, res) => {
-    res.render("index")///app.use should be used after defining routes rather than app.get
+    res.render("index/recipe")///app.use should be used after defining routes rather than app.get
 })
 // 404 Route
 app.get((req,res)=>{

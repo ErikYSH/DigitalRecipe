@@ -41,10 +41,6 @@ app.set("view engine", "ejs");
 
 
 /* ========== Router & Controllers ========== */
-// app.get("/", (req,res)=>{
-//     res.send("<h1> Welcome to Digital Page</h1>")
-// })
-
 app.get("/", (req, res) => {
     res.render("index")///app.use should be used after defining routes rather than app.get
 })
@@ -53,9 +49,6 @@ app.get((req,res)=>{
     res.send("404! NOT FOUND")
 })
  
-
-
-
 
 app.use('/recipe', routes.recipe);
 

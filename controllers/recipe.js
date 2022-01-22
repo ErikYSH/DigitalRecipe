@@ -38,6 +38,10 @@ const cloudinary = require('cloudinary').v2;
         
 // )
 
+/**
+ * ===== General Section =====
+ */
+
 const homepages = async(req, res) => {
     try {
       const limits = 10;
@@ -66,6 +70,13 @@ const categoryIdx = (req, res) => {
         return res.render("recipe/newRecipe", context);
     })
 }
+
+
+/**
+ * ===== Recipie Section =====
+ */
+
+
 // SHOW
 
 const show = (req, res) => {

@@ -21,21 +21,20 @@
     <% if (recipe.ingredient_img) { %> 
      <img src="<%= recipe.ingredient_img %> " style="max-height: 660px; max-width: 500px; display: block; margin-left: auto; margin-right: auto; margin-top: 50px; margin-bottom: 50px" alt="<%= recipe.name %> ">
     <% } %>
+
+
     <ul>
       <h5 style="margin-bottom: 10px; margin-top: 10px; font-family: rubik">INGREDIENTS</h5> 
-      <% for (let i=0; i < recipe.ingredient.length; i++){ %> 
-      <li style="background-color: #EFEFED; margin-right: 20px;" class="list-group-item"><%= recipe.ingredient[i] %> </li>
-      <% } %>
-   
-  </ul>
+      <li style="background-color: #EFEFED; margin-right: 20px; font-family: rubik; white-space: pre-wrap; " class="list-group-item"><%= recipe.ingredient %> </li>
+    </ul>
 
   <ul>
   <h5 style="margin-bottom: 10px; margin-top: 10px; font-family: rubik">DIRECTIONS</h5> 
-  <% for (let i=0; i < recipe.direction.length; i++){ %> 
-    <li style="background-color: #EFEFED; margin-right: 20px;" class="list-group-item"><%= recipe.direction[i] %></li>
-    <% } %> 
+    <li style="background-color: #EFEFED; margin-right: 20px; font-family: rubik; white-space: pre-wrap;" class="list-group-item"><%= recipe.direction %></li>
 </ul>
 </ul>
+
+
 
   <a href="/recipe/<%= recipe._id %>/editRecipe">
 <button type="button" class="btn btn-primary btn-sm" style="background-color: white; color: black; margin-bottom: 10px; margin-top: 10px; font-family: rubik; margin-left: 80px">EDIT</button></a>
@@ -44,16 +43,17 @@
   <input style="font-family: rubik; background-color: white; font-family: rubik; border-radius: 99; margin-left: 80px;" type="submit" value="DELETE">
 </form>
 
-<div style="margin-top: 10px;"">
-  <h6 style="margin-left: 75px; margin-top: 10px;"">PREVIOUS COMMENTS:</h6>
-  <p style="margin-left: 75px; margin-top: 10px;"><%= recipe.comment %></p>
+<div style="margin-top: 10px;">
+  <h6 style="margin-left: 75px; margin-top: 10px;">PREVIOUS COMMENTS:</h6>
+  <p style="margin-left: 75px; margin-top: 10px; font-family: rubik; white-space: pre-wrap; "><%= recipe.comment %></p>
 </div>
 
 
 <div Style="margin-bottom: 40px; margin-top: 10px; max-width: 580px; margin-left: 75px;" class="form-floating">
-    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px; white-space: pre-wrap;"></textarea>
     <label for="floatingTextarea2" style="font-family: rubik;">COMMENTS</label>
   </div>
+
 
 <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
 </div>  

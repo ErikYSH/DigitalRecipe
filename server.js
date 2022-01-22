@@ -59,6 +59,6 @@ app.get((req,res)=>{
 
 app.use('/recipe', routes.recipe);
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT || 7000, () => {
     console.log(`AWESOME DIGITAL RECIPE Book is Live on - PORTL:${PORT}`)
 })

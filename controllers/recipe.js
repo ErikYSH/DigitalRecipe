@@ -100,8 +100,8 @@ const newRecipe = (req, res) => {
 const createRecipe = async (req, res) =>{
     try {
         const photo = req.files.ingredient_img;
-        photo.mv(`../uploads/${photo.name}`);
-        const result = await cloudinary.uploader.upload(`../uploads/${photo.name}`)
+        photo.mv(`./uploads/${photo.name}`);
+        const result = await cloudinary.uploader.upload(`./uploads/${photo.name}`)
         // console.log(result)
         req.body.ingredient_img = result.secure_url;
         // db.Food_category.findById(req.body.food_category)

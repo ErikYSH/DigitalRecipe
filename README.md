@@ -7,4 +7,4 @@ The user can add an image to represent their recipe as well as add any comments 
 We hope you enjoy interacting with this website! 
 
 Best, 
-Joe & Erik 
+Joe & Erik git 

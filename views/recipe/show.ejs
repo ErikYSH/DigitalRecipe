@@ -2,7 +2,12 @@
 <%- include('../partials/head.ejs') %>
 <body>
 <div class="container" style="margin-bottom: 10px; max-width: 700px;">
-<ul class="list-group list-group-flush" style="margin-left: 50px;">
+  <div class="container">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+    </div>
+
+  <h5 class="card-text" style="font-family: rubik; text-align: center; margin-top:  30px; margin-bottom: 20px; "><%= recipe.name %> </h5>
+<ul class="list-group list-group-flush" style="margin-left: 50px; ">
     <ul class="list-group list-group-horizontal">
         <li class="list-group-item">Prep Time</li>
         <li class="list-group-item"><%= recipe.prep_time %> </li>
@@ -33,24 +38,25 @@
 </ul>
 
   <a href="/recipe/<%= recipe._id %>/editRecipe">
-<button type="button" class="btn btn-primary btn-sm" style="background-color: white; color: black; margin-bottom: 10px; margin-top: 10px; font-family: rubik; margin-left: 70px">EDIT</button></a>
+<button type="button" class="btn btn-primary btn-sm" style="background-color: white; color: black; margin-bottom: 10px; margin-top: 10px; font-family: rubik; margin-left: 80px">EDIT</button></a>
 
 <form  action="/recipe/<%= recipe._id %>?_method=DELETE" method="POST">
-  <input style="font-family: rubik; background-color: white; font-family: rubik; border-radius: 99; margin-left: 70px;" type="submit" value="DELETE">
+  <input style="font-family: rubik; background-color: white; font-family: rubik; border-radius: 99; margin-left: 80px;" type="submit" value="DELETE">
 </form>
 
 <div style="margin-top: 10px;"">
-  <h6 style="margin-left: 70px; margin-top: 10px;"">PREVIOUS COMMENTS:</h6>
-  <p style="margin-left: 70px; margin-top: 10px;"><%= recipe.comment %></p>
+  <h6 style="margin-left: 75px; margin-top: 10px;"">PREVIOUS COMMENTS:</h6>
+  <p style="margin-left: 75px; margin-top: 10px;"><%= recipe.comment %></p>
 </div>
 
 
-<div Style="margin-bottom: 10px; margin-top: 10px; max-width: 700px; margin-left: 50px;" class="form-floating">
+<div Style="margin-bottom: 40px; margin-top: 10px; max-width: 580px; margin-left: 75px;" class="form-floating">
     <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
     <label for="floatingTextarea2" style="font-family: rubik;">COMMENTS</label>
   </div>
 
-  
+<header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+</div>  
 
 </div>  
 </body>

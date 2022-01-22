@@ -1,31 +1,38 @@
 <%- include('../partials/head.ejs') %>
 <body>
+
+
 <div class="container-sm" style="margin-bottom: 10px;">
     <form id="new-form" action="/recipe/<%= recipe._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
     
+      <div class="container">
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+        </div>
+
+
        <div class="input-group flex-nowrap">
-        <span class="input-group-text" id="addon-wrapping" style="background-color: #EFEFED;">Recipe Name</span>
-        <input type="text" placeholder="recipe name" value="<%= recipe.name %>" name="name" class="form-control" aria-label="Recipe Name aria-describedby="addon-wrapping">
+        <span class="input-group-text" id="addon-wrapping" style="background-color: #EFEFED; margin-bottom: 10px;">Recipe Name</span>
+        <input type="text" placeholder="recipe name" value="<%= recipe.name %>" name="name" class="form-control" aria-label="Recipe Name aria-describedby="addon-wrapping" style="margin-bottom: 10px;">
       </div>
     
     
       <div class="input-group flex-nowrap">
-        <span class="input-group-text" id="addon-wrapping" style="background-color: #EFEFED;">Cooking Time</span>
-        <input type="text" placeholder="cooking time" value="<%= recipe.cook_time %>" name="cook_time" class="form-control" aria-label="Cooking Time" aria-describedby="addon-wrapping">
+        <span class="input-group-text" id="addon-wrapping" style="background-color: #EFEFED; margin-bottom: 10px;">Cooking Time</span>
+        <input type="text" placeholder="cooking time" value="<%= recipe.cook_time %>" name="cook_time" class="form-control" aria-label="Cooking Time" aria-describedby="addon-wrapping" style="margin-bottom: 10px;">
       </div>
     
       <div class="input-group flex-nowrap">
-        <span class="input-group-text" id="addon-wrapping" style="background-color: #EFEFED;">Prep Time</span>
-        <input type="text" placeholder="prep time" value="<%= recipe.prep_time %>" name="prep_time" class="form-control" aria-label="Prep Time" aria-describedby="addon-wrapping">
+        <span class="input-group-text" id="addon-wrapping" style="background-color: #EFEFED; margin-bottom: 10px;">Prep Time</span>
+        <input type="text" placeholder="prep time" value="<%= recipe.prep_time %>" name="prep_time" class="form-control" aria-label="Prep Time" aria-describedby="addon-wrapping" style="margin-bottom: 10px;">
       </div>
     
       <div class="input-group flex-nowrap">
-        <span class="input-group-text" id="addon-wrapping" style="background-color: #EFEFED;">Portion</span>
-        <input type="text" placeholder="portion" value="<%= recipe.portion %>" name="portion" class="form-control" aria-label="Portion" aria-describedby="addon-wrapping">
+        <span class="input-group-text" id="addon-wrapping" style="background-color: #EFEFED; margin-bottom: 10px;">Portion</span>
+        <input type="text" placeholder="portion" value="<%= recipe.portion %>" name="portion" class="form-control" aria-label="Portion" aria-describedby="addon-wrapping" style="margin-bottom: 10px;">
       </div>
       
       <% if (recipe.ingredient_img) { %>
-      <div class="input-group mb-3" style="margin-bottom: 10px; margin-top: 10px; background-color: #EFEFED;">
+      <div class="input-group mb-3" style="margin-bottom: 10px; background-color: #EFEFED;">
         <label class="input-group-text" for="inputGroupFile01" style="background-color: #EFEFED;">Upload</label>
         <input type="file" value="<%= recipe.ingredient_img %>" name="ingredient_img" class="form-control" id="inputGroupFile01">
         
@@ -35,40 +42,33 @@
 
 
       <div class="form-group">
-        <span class="input-group-text" id="addon-wrapping" style ="background-color: #EFEFED; font-family: rubik; color: 324456; margin-bottom: 10px; margin-top: 10px"">INGREDIENTS</span>
+        <span class="input-group-text" id="addon-wrapping" style ="background-color: #EFEFED; font-family: rubik; color: 324456;">INGREDIENTS</span>
         <label for="exampleFormControlTextarea1"></label>
-        <textarea placeholder="<%= recipe.ingredient %>" style="margin-bottom: 10px; margin-top: 10px; white-space: pre-wrap; font-family: rubik;" class="form-control" id="exampleFormControlTextarea1" rows="3" name="ingredient"><%= recipe.ingredient %></textarea> 
+        <textarea placeholder="<%= recipe.ingredient %>" style="margin-bottom: 20px;  white-space: pre-wrap; font-family: rubik;" class="form-control" id="exampleFormControlTextarea1" rows="3" name="ingredient"><%= recipe.ingredient %></textarea> 
       </div>
      
       
-     
-<!--       
-      <div class="input-group flex-nowrap">
-        <span class="input-group-text" id="addon-wrapping" style="background-color: #EFEFED;">Directions</span>
-        <input type="text" placeholder="directions" value="<%= recipe.direction %>" name="direction" class="form-control" aria-label="direction" aria-describedby="addon-wrapping">
-      </div>
-       -->
+
 
       <div class="form-group">
-        <span class="input-group-text" id="addon-wrapping" style ="background-color: #EFEFED; font-family: rubik; color: 324456; margin-top: 10px;">DIRECTIONS</span>
+        <span class="input-group-text" id="addon-wrapping" style ="background-color: #EFEFED; font-family: rubik; color: 324456;">DIRECTIONS</span>
         <label for="exampleFormControlTextarea1"></label>
-        <textarea placeholder="<%= recipe.direction %>" style="margin-bottom: 10px; margin-top: 10px; white-space: pre-wrap; font-family: rubik;" class="form-control" id="exampleFormControlTextarea1" rows="3" name="ingredient"><%= recipe.direction %></textarea> 
+        <textarea placeholder="<%= recipe.direction %>" style="margin-bottom: 20px; white-space: pre-wrap; font-family: rubik;" class="form-control" id="exampleFormControlTextarea1" rows="3" name="ingredient"><%= recipe.direction %></textarea> 
       </div>
      
 
       <div class="form-group">
-        <span class="input-group-text" id="addon-wrapping" style ="background-color: #EFEFED; font-family: rubik; color: 324456; margin-top: 10px;">COMMENTS</span>
+        <span class="input-group-text" id="addon-wrapping" style ="background-color: #EFEFED; font-family: rubik; color: 324456;">COMMENTS</span>
         <label for="exampleFormControlTextarea1"></label>
-        <textarea placeholder="<%= recipe.comment %>" style="margin-bottom: 10px; margin-top: 10px; white-space: pre-wrap; font-family: rubik;" class="form-control" id="exampleFormControlTextarea1" rows="3" name="ingredient"><%= recipe.comment %></textarea> 
+        <textarea placeholder="<%= recipe.comment %>" style="margin-bottom: 20px; white-space: pre-wrap; font-family: rubik;" class="form-control" id="exampleFormControlTextarea1" rows="3" name="ingredient"><%= recipe.comment %></textarea> 
       </div>
-<!-- 
-      <div class="input-group flex-nowrap">
-        <span class="input-group-text" id="addon-wrapping" style="background-color: #EFEFED;">Comments</span>
-        <input type="text" placeholder="comments" value="<%= recipe.comment %>" name="comment" class="form-control" aria-label="Comments" aria-describedby="addon-wrapping">
-    
-      </div> -->
+
         <input type="submit" value="Update Recipe">
       </div> 
+
+      <div class="container">
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+        </div>
       </form>
     </div>
 

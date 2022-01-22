@@ -12,8 +12,13 @@ Joe & Erik git
 USER FLOW:
 ![Screen Shot 2022-01-22 at 2 52 35 PM](https://user-images.githubusercontent.com/92687151/150657933-7623b696-2c68-4362-8ba6-4fa74bf6e47c.png)
 
+
+
+
 ERD:
 ![Screen Shot 2022-01-22 at 2 52 26 PM](https://user-images.githubusercontent.com/92687151/150657939-4106bbf7-d4ff-4207-9c75-23b7e7cf85a6.png)
+
+
 
 WIREFRAME:
 

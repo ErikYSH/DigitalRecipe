@@ -23,3 +23,7 @@ ERD:
 WIREFRAME:
 
 ![Screen Shot 2022-01-22 at 2 53 22 PM](https://user-images.githubusercontent.com/92687151/150657946-c2f09619-5b7d-4580-850b-28036f7e2f04.png)
+
+USER STORIES:
+
+![Screen Shot 2022-01-22 at 2 54 15 PM](https://user-images.githubusercontent.com/92687151/150657972-712866f8-5baa-4e09-92a6-657e1cdc95c5.png)

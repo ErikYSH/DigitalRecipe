@@ -13,7 +13,7 @@ const routes = require('./routes');
 const app = express();
 
 /* ========== CONFIGURATION ========== */
-const PORT = 7000;
+const PORT = process.env.PORT || 7000;
 cloudinary.config({
     cloud_name: process.env.CLOUD_NAME,
     api_key: process.env.API_KEY,
@@ -59,6 +59,6 @@ app.get((req,res)=>{
 
 app.use('/recipe', routes.recipe);
 
-app.listen(process.env.PORT || 7000, () => {
+app.listen(PORT, () => {
     console.log(`AWESOME DIGITAL RECIPE Book is Live on - PORTL:${PORT}`)
 })
